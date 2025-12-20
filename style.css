@@ -1,0 +1,141 @@
+body {
+    font-family: sans-serif;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url(fundo.png);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    min-width: 950px; /* Força o navegador a criar barra de rolagem se a tela for pequena */
+    margin: 0;
+}
+
+/*Classe Container*/
+.container{
+    width: 89%;
+    text-align: center;
+    margin-top: 50px;
+}
+
+input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-right: 5px; /* Espacinho entre eles */
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+h1 {
+    /* Removemos margens extras que empurravam o texto */
+    margin: 0; 
+    
+    /* Cor escura para contraste (Marrom Café) */
+    color: #3E2723; 
+    
+    /* Removemos a sombra antiga ou colocamos uma bem suave e clara */
+    text-shadow: none; 
+    
+    font-size: 2.5rem;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.movel-container{
+
+    width: 600px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    cursor: pointer;
+
+    background-color: rgba(93, 64, 55, 0.95); /* O Marrom agora é 95% opaco */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5); /* Sombra mais forte */
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Borda sutil de luz */
+
+    
+}
+
+.prateleira-selecionada {
+    background-color: #efebe9; /* Um fundo levemente mais claro */
+    box-shadow: inset 0 0 10px #8D6E63; /* Uma sombra interna para dar destaque */
+    border: 2px dashed #5D4037; /* Uma borda tracejada indicando seleção */
+}
+
+/* Prateleira (Madeira) */
+.prateleira{
+    display: flex;
+    align-items: flex-end; /* Livros apoiados na base */
+    height: 140px; /* Altura do vão da estante */
+    /* A borda de baixo agora é a tábua onde os livros apoiam */
+    border-bottom: 10px solid #A0522D; /*A madeira onde o livro apoia*/
+    /* Fundo mais claro para parecer o fundo do móvel */
+    background-color: #d1c0a8; /* Fundo da parede atrás da estante*/
+    padding: 0 10px;
+    gap: 3px; 
+    /* IMPORTANTE: Garante que a prateleira não mude de tamanho */
+    box-sizing: border-box;
+}
+
+/* O livro (Lombada)*/
+.livro {
+    width: 25px;
+    
+    background-color: #333;
+    color: white;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    writing-mode: vertical-rl; /*Texto vertical */
+    text-orientation: mixed;
+    padding: 2px;
+    font-size: 10px;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s;
+}
+
+.livro:hover {
+    transform: translate(-10px); /*O livro "sobe* quando passa o mouse*/
+}
+
+.painel-superior {
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    
+    /* AQUI ESTÁ A CORREÇÃO DA CENTRALIZAÇÃO: */
+    /* 0 em cima, auto nas laterais (centraliza), 20px embaixo */
+    margin: 0 auto 20px auto; 
+    
+    backdrop-filter: blur(5px);
+    width: 600px; 
+    box-sizing: border-box;
+}
+
+.controles {
+    background-color: transparent; /* Tira o fundo antigo */
+    padding: 0;
+    box-shadow: none;
+}
