@@ -57,18 +57,20 @@ Crie um arquivo script.js (ou use o existente) e adicione suas credenciais no ob
 
 Abra o arquivo index.html no seu navegador ou use uma extensão como o Live Server no VS Code.
 
-🧠 Aprendizados
+## 🧠 Aprendizados
+
 Durante o desenvolvimento deste projeto, pratiquei:
 
-Integração entre Front-end e Banco de Dados (Firestore).
+* Integração entre Front-end e Banco de Dados (Firestore).
+* Lógica de autenticação e proteção de rotas/dados.
+* Manipulação de arrays e objetos complexos em JavaScript.
+* Criação de Modais e interfaces interativas sem frameworks.
+* Tratamento de erros e feedback visual para o usuário.
 
-Lógica de autenticação e proteção de rotas/dados.
+## 📝 Autor
 
-Manipulação de arrays e objetos complexos em JavaScript.
+Desenvolvido por **Flaviano Alves**.
+Entre em contato!
 
-Criação de Modais e interfaces interativas sem frameworks.
-
-Tratamento de erros e feedback visual para o usuário.
-
-📝 Autor
-Desenvolvido por Flaviano Alves. 
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/flavianoalvs)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/viano-dev)
