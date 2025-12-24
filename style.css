@@ -7,10 +7,12 @@ body {
     background-repeat: no-repeat;
 
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     min-height: 100vh;
     min-width: 950px; /* Força o navegador a criar barra de rolagem se a tela for pequena */
     margin: 0;
+    padding-top: 20px;
 }
 
 /*Classe Container*/
@@ -115,20 +117,17 @@ h1 {
 
 .painel-superior {
     background-color: rgba(255, 255, 255, 0.85);
-    padding: 20px;
+    padding: 30px;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     gap: 15px;
     
-    /* AQUI ESTÁ A CORREÇÃO DA CENTRALIZAÇÃO: */
     /* 0 em cima, auto nas laterais (centraliza), 20px embaixo */
-    margin: 0 auto 20px auto; 
-    
+    margin-bottom: 20px;
     backdrop-filter: blur(5px);
     width: 600px; 
     box-sizing: border-box;
@@ -139,3 +138,74 @@ h1 {
     padding: 0;
     box-shadow: none;
 }
+
+/* Fundo escuro que cobre a tela inteira */
+.modal-fundo {
+    display: none; /* Começa escondido */
+    position: fixed;
+    z-index: 100; /* Fica em cima de tudo */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6); /* Preto transparente */
+    backdrop-filter: blur(5px); /* Desfoque no fundo */
+    align-items: center;
+    justify-content: center;
+}
+
+/* O Cartão do Livro em si */
+.modal-cartao {
+    background: rgba(255, 255, 255, 0.95);
+    width: 400px;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    text-align: center;
+    position: relative;
+    animation: surgir 0.3s ease-out;
+}
+
+@keyframes surgir {
+    from {transform: scale(0.8); opacity: 0;}
+    to {transform: scale(1); opacity: 1;}
+}
+
+/* Botão de fechar (X) */
+.fechar-modal {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+}
+.fechar-modal:hover { color: #000; }
+
+/* Tipografia do Modal */
+#modal-titulo { margin-top: 0; color: #3E2723; }
+#modal-autor { margin-top: -10px; color: #795548; font-weight: normal; font-style: italic;}
+
+/* Área de texto */
+.area-opiniao { text-align: left; margin: 20px 0; }
+.area-opiniao label { font-weight: bold; display: block; margin-bottom: 5px; color: #555; }
+textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-family: sans-serif;
+    resize: vertical; /* Permite aumentar altura */
+    box-sizing: border-box;
+}
+
+/* Botões de Ação */
+.modal-botoes { display: flex; justify-content: space-between; gap: 10px; margin-top: 20px; }
+
+button.btn-excluir { background-color: #e53935; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; }
+button.btn-excluir:hover { background-color: #b71c1c; }
+
+button.btn-salvar { background-color: #43a047; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; }
+button.btn-salvar:hover { background-color: #2e7d32; }

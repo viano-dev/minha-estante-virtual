@@ -1,31 +1,57 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Minha Estante Virtual</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <div class="container">
-            <div class="painel-superior">
-                <h1>Minha Estante 📖</h1>
-            
-                <div class="controles">
-                    <input type="text" id="titulo" placeholder="Nome do Livro">
-                    <input type="text" id="autor" placeholder="Autor">
-                    <button onclick="adicionarLivro()">Adicionar Livro</button>
-                </div>
-            </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Estante Virtual</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-            <div id="movel-biblioteca" class="movel-container">
-                <div class="prateleira" id="p1"></div>
-                <div class="prateleira" id="p2"></div>
-                <div class="prateleira" id="p3"></div>
-                <div class="prateleira" id="p4"></div>
-            </div>
+   <div class="painel-superior">
+        <h1>Minha Estante 📖</h1>
+        <div id="area-usuario" style="margin-bottom: 15px; display: none;">
+            <span>Olá, <strong id="nome-usuario">Usuário</strong>! 👋</span>
+            <button id="btn-logout" style="background-color: #d32f2f; font-size: 0.8rem; padding: 5px 10px; margin-left: 10px;">Sair</button>
         </div>
 
-        <script src="script.js"></script>
-    </body>
+        <div id="area-login-botoes" style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 15px;">
+            <button id="btn-login" style="background-color: #4285F4; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">
+                Login com Google
+            </button>
+            
+            <button id="btn-convidado" style="background-color: #757575; color: white; border: none; padding: 8px 20px; border-radius: 5px; cursor: pointer; font-size: 0.9rem;">
+                Entrar como Convidado 👤
+            </button>
+        </div>
+
+        <div class="controles" id="area-controles" style="display: none;">
+            <input type="text" id="titulo" placeholder="Nome do Livro">
+            <input type="text" id="autor" placeholder="Autor">
+            <button id="btn-adicionar">Adicionar Livro</button> 
+        </div>
+    </div>
+
+    <div id="movel-biblioteca" class="movel-container">
+        </div>
+
+    <div id="modal-livro" class="modal-fundo">
+        <div class="modal-cartao">
+            <span class="fechar-modal">&times;</span> <h2 id="modal-titulo">Título do Livro</h2>
+            <h3 id="modal-autor">Nome do Autor</h3>
+            
+            <div class="area-opiniao">
+                <label>Minha opinião:</label>
+                <textarea id="modal-opiniao" placeholder="O que você achou desse livro? Escreva aqui..."></textarea>
+            </div>
+
+            <div class="modal-botoes">
+                <button class="btn-excluir" id="btn-modal-excluir">Excluir Livro 🗑️</button>
+                <button class="btn-salvar" id="btn-modal-salvar">Salvar Opinião 💾</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
 </html>
